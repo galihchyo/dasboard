@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dasboard | Cahyo Galih</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f4f4;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Login Form */
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #2e86de;
+      color: white;
+    }
+
+    .login-box {
+      background: white;
+      color: #333;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .login-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .login-box input {
+      width: 93%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .login-box button {
+      width: 100%;
+      background: #2e86de;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .contact-admin {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 15px;
+      color: #555;
+    }
+
+
+    /* Main Container */
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header {
+    background: #2e86de;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    }
+
+    header h1 {
+    margin: 0;
+    font-size: 20px;
+    flex: 1;
+    }
+
+    header button.logout {
+    background: white;
+    color: #2e86de;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+    }
+
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 15px;
+      margin-bottom: 10px;
+      background: #ecf0f1;
+      border-left: 5px solid #2e86de;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    li:hover {
+      background: #dfe6e9;
+    }
+
+    /* Popup */
+    #popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      margin-bottom: 20px;
+    }
+
+    .popup-content button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-open {
+      background-color: #2e86de;
+      color: white;
+    }
+
+    .btn-close {
+      background-color: #ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+<div id="loginPage" class="login-container">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Masuk</button>
+    <p id="loginError" style="color:red; text-align:center; margin-top:10px;"></p>
+    <p class="contact-admin">Belum mempunyai akun? <br><strong>Hubungi Cahyo Galih</strong></p>
+     <p style="text-align:center; font-size:13px; color:#ccc; margin-top:20px;">
+       &copy; 2025 Cahyo Galih
+    </p>
+  </div>
+</div>
+  <!-- Main Page -->
+  <div id="mainPage" class="hidden">
+    <header>
+      <h1>GaLih Chyo</h1>
+      <button class="logout" onclick="logout()">Logout</button>
+    </header>
+
+    <div class="container">
+      <h2>Daftar Tugas Pemograman</h2>
+      <h3>Pilih Tugas:</h3>
+      <ul>
+        <li onclick="openPopup('Html Web', 'Membuat tampilan web menggunakan Html', 'home/HTML WEB/cahyogalih.html')">
+          <strong>Html Web:</strong> Membuat tampilan web menggunakan Html
+        </li>
+        <li onclick="openPopup('Html Css Web', 'Membuat tampilan web menggunakan Html dan Css', 'home/HTML CSS WEB/index.html')">
+          <strong>Html Css Web:</strong> Membuat tampilan web menggunakan Html dan Css
+        <li onclick="openPopup('Java Script', 'Membuat tabel kalkulator dari java script', 'home/Latihan Java/pertama/index.html')">
+          <strong>Java Script:</strong> Membuat tabel kalkulator dari java script
+        </li>
+        <li onclick="openPopup('Java Script', 'Membuat tabel data diri input dan output dengan java script', 'home/Latihan Java/kedua/index.html')">
+          <strong>Java Script:</strong> Membuat tabel data diri input dan output dengan java script
+        </li>
+        <li onclick="openPopup('Java Script', 'Membuat tabel nota pembelian dari java script', 'home/Latihan Java/ketiga/index.html')">
+          <strong>Java Script:</strong> Membuat tabel nota pembelian dari java script
+        </li>
+        <li onclick="openPopup('Html Java Script', 'Membuat progam penjualan barang electronic menggunakan Html, Css & Java Script', 'home/progam penjualan/index.html')">
+          <strong>Html Java Script:</strong> Membuat progam penjualan barang electronic menggunakan Html, Css & Java Script
+        </li>
+        <li onclick="openPopup('Html Java Script', 'Membuat progam penggajian menggunakan Html, Css & Java Script', 'home/progam penggajian/index.html')">
+          <strong>Html Java Script:</strong> Membuat progam penggajian menggunakan Html, Css & Java Script
+        </li>
+        <li onclick="openPopup('Html Java Script', 'Membuat progam pembelian barang menggunakan Html, Css & Java Script', 'home/progam pembelian/index.html')">
+          <strong>Html Java Script:</strong> Membuat progam pembelian barang menggunakan Html, Css & Java Script
+        </li>
+        <li onclick="openPopup('Html Java Script', 'Membuat progam tagihan listrik menggunakan Html, Css & Java Script', 'home/progam tagihan listrik/index.html')">
+          <strong>Html Java Script:</strong> Membuat progam tagihan listrik menggunakan Html, Css & Java Script
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup">
+    <div class="popup-content">
+      <h3 id="popupTitle">Judul Tugas</h3>
+      <p id="popupDesc">Deskripsi tugas...</p>
+      <button class="btn-open" id="btnOpenTask">Buka Tugas</button>
+      <button class="btn-close" onclick="closePopup()">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    let taskLink = "#";
+
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const error = document.getElementById("loginError");
+
+      if (user === "cahyogalih" && pass === "12345") {
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("mainPage").classList.remove("hidden");
+        error.textContent = "";
+      } else {
+        error.textContent = "Username atau password salah.";
+      }
+    }
+
+    function logout() {
+      document.getElementById("mainPage").classList.add("hidden");
+      document.getElementById("loginPage").style.display = "flex";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("loginError").textContent = "";
+    }
+
+    function openPopup(title, desc, link) {
+      document.getElementById("popupTitle").textContent = title;
+      document.getElementById("popupDesc").textContent = desc;
+      taskLink = link;
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    document.getElementById("btnOpenTask").onclick = function() {
+      window.open(taskLink, "_blank");
+    };
+  </script>
+
+<footer>
+  &copy; 2025 <strong>Cahyo Galih</strong>. Semua hak dilindungi.
+</footer>
+
+
+</body>
+</html>
