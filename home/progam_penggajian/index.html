@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Program Penggajian - PT.GaLih Music Group</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Program Penggajian<br>PT.GaLih Music Group</h1>
+    <form id="formGaji">
+      <div class="section">
+        <div class="section-title">Data Input</div>
+        <table>
+          <tr><td>Nama Artist</td><td><input type="text" id="nama" placeholder="Masukkan nama artist"></td></tr>
+          <tr><td>Total Lagu</td><td><input type="text" id="lagu" placeholder="Contoh: 10"></td></tr>
+          <tr><td>Upah per Lagu</td><td><input type="text" id="upah" placeholder="Contoh: 20000"></td></tr>
+          <tr><td>Jumlah Anak</td><td><input type="text" id="anak" placeholder="Contoh: 2"></td></tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Output Gaji</div>
+        <table>
+          <tr><td>Gaji</td><td><input type="text" id="gaji" readonly></td></tr>
+          <tr><td>Tunjangan Anak (10%)</td><td><input type="text" id="tunjangan" readonly></td></tr>
+          <tr><td>Total Gaji</td><td><input type="text" id="total" readonly></td></tr>
+        </table>
+      </div>
+
+      <div class="button-group">
+        <button type="button" onclick="prosesGaji()">Proses</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Java Script | Galih</title>
+    <script src="script.js"></script>
+</head>
+
+<body bgcolor="iceblue">
+    <script language="JavaScript" src="isi.js"></script>
+
+    <script languange ="JavaScript"> 
+         function tekan() 
+        {
+         var statustr = (document.fform.status.value);
+         var nisstr = (document.fform.nis.value); 
+         var namastr = (document.fform.nama.value);
+         var kelaminstr = (document.fform.kelamin.value);
+         var agamastr = (document.fform.agama.value);
+         var jurusanstr = (document.fform.jurusan.value); 
+         var ketstr = (document.fform.ket.value); 
+         document.fform.nisout.value = nisstr;  
+         document.fform.namaout.value = namastr;
+         document.fform.kelaminout.value = kelaminstr;
+         document.fform.statusout.value = statustr;
+         document.fform.agamaout.value = agamastr; 
+         document.fform.jurusanout.value = jurusanstr;
+         document.fform.ketout.value = ketstr;    
+        }
+    </script> 
+    <form name="fform">
+        <h2> Masukkan Data Diri Anda</h2>
+        <hr>
+        <pre>
+        NIS             : <input type="text" size="21" name="nis"> 
+        Nama            : <input type="text" size="21" name="nama">
+        Jenis Kelamin   : <select name="kelamin" size="1"> 
+                         <option value ="-">-</option>
+                         <option value ="Laki Laki">Laki Laki</option>
+                         <option value ="Perempuan">Perempuan</option>
+        </select>
+        Status          : <label><input type="radio" value="Kawin" id="kawin" name="status"> Kawin</label>
+                          <label><input type="radio" value="Belum Kawin" id="belum" name="status"> Belum Kawin</label>
+        Agama           : <select name="agama" size="1">
+                         <option value ="-">-</option> 
+                         <option value ="Islam">Islam</option>
+                         <option value ="Kristen">Kristen</option>
+                         <option value ="Hindu">Hindu</option>
+                         <option value ="Budha">Budha</option>
+        </select>
+        Jurusan         : <select name="jurusan" size="1">
+            <option value ="-">-</option> 
+            <option value ="Teknik Jaringan Komputer">Teknik Jaringan Komputer</option>
+            <option value ="Broad Casting">Broad Casting</option>
+            <option value ="Desain Komunikasi Visual">Desain Komunikasi Visual</option>
+            <option value ="Teknik Electronik">Teknik Electronik</option>
+            <option value ="Teknik Otomotif">Teknik Otomotif</option>
+        </select>
+        Keterangan      : <textarea name="ket" rows="3" cols="21"></textarea> 
+        <BR><BR>
+            
+        </pre>
+        <br>
+        <center>
+            <input type="button" value="kirim" onclick="tekan()">
+            <input type="reset" value="reset">
+        </center>
+
+        <hr>
+        <H2>Output</H2>
+        <PRE>
+        NIS             : <input type="text" size="21" name="nisout"> 
+        Nama            : <input type="text" size="21" name="namaout">
+        Jenis Kelamin   : <input type="text" size="21" name="kelaminout">
+        Status          : <input type="text" size="21" name="statusout">
+        Agama           : <input type="text" size="21" name="agamaout">
+        Jurusan         : <input type="text" size="21" name="jurusanout">
+        Keterangan      : <textarea rows="3" cols="21" name="ketout"></textarea>  
+        </form>
+</h> 
+    

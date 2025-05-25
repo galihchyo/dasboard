@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page PT.Lah Kan Ada Tembok | Galih©</title>
+    <link rel="stylesheet" href="styless.css">
+    <script src="isi.js"></script>
+</head>
+
+<body>
+    <script>
+        function pass() {
+            var coba = 1;
+
+            do {
+                p = prompt("Tuliskan password dengan benar", "")
+                if (p == "123") {
+                    alert("Selamat Datang Brok");
+                    // window.open("utama.html");
+                    window.location = "utama.html";
+                    break;
+                } else {
+                    alert("Password Salah Brok !!! Ulangi lagi yak.");
+                }
+
+                if (coba == 3) {
+                    alert("Maaf Yak, Kesempatan Lu Hanya 3 Kali");
+                    history.go(-1);
+                }
+                coba++;
+            } while (coba <= 3)
+        }
+        // © GaLih YT
+    </script>
+
+    <form method="post">
+        <input type="button" value="Password" onclick="pass()">
+    </form>
+
+    <footer>
+        <p>&copy; Copyright 2025</p>
+    </footer>
+</body>
+
+</html>

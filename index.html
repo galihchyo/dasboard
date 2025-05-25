@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tiktok: '#fe2c55'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900 min-h-screen flex justify-center items-center">
+  <div class="bg-white border border-gray-200 p-8 rounded-2xl shadow-lg w-full max-w-md">
+    <h2 class="text-3xl font-bold mb-6 text-center text-tiktok">Login</h2>
+    <form id="loginForm" class="space-y-4">
+      <!-- Error Message -->
+      <div id="errorMsg" class="hidden bg-red-100 text-red-700 px-4 py-2 rounded-lg text-sm text-center"></div>
+
+      <div>
+        <label class="block text-sm font-semibold mb-1">Username</label>
+        <input type="text" id="username" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-tiktok" required>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1">Password</label>
+        <input type="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-tiktok" required>
+      </div>
+      <button type="submit" class="w-full bg-tiktok hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-xl transition duration-200">
+        Login
+      </button>
+    </form>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    loginForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (username === 'admin' && password === '1234') {
+        errorMsg.classList.add('hidden');
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMsg.textContent = 'Username atau password salah!';
+        errorMsg.classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+
+</html>

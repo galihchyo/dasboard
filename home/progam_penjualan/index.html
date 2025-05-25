@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>GaLih Chyo Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Form Penjualan GaLih Chyo Store</h1>
+    <form id="komputerForm">
+      <label>Pilih Produk:</label>
+      <select id="produkKomputer">
+        <option value="" disabled selected>Pilih Barang</option>
+        <option value="Laptop">Laptop - Rp8.000.000</option>
+        <option value="PC">PC Rakitan - Rp10.000.000</option>
+        <option value="Mini">Mini PC - Rp7.300.000</option>
+        <option value="Monitor">Monitor - Rp2.700.000</option>
+        <option value="Speaker">Speaker - Rp1.500.000</option>
+      </select>
+
+      <label>Tambahan Layanan:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" value="Flex" class="layanan"> Kabel Flex (+Rp350.000)<br>
+        <input type="checkbox" value="DP" class="layanan"> Kabel DisplayPort (+Rp200.000)<br>
+        <input type="checkbox" value="ARGB" class="layanan"> Controller ARGB (+Rp130.000)
+      </div>
+
+      <label>Metode Pembayaran:</label>
+      <div class="radio-group">
+        <input type="radio" name="pembayaran" value="Tunai" checked> Tunai<br>
+        <input type="radio" name="pembayaran" value="Kredit"> Kredit
+      </div>
+
+      <label>Harga:</label>
+      <input type="text" id="harga" readonly>
+
+      <label>Diskon / Bunga:</label>
+      <input type="text" id="diskonBunga" readonly>
+
+      <label>Total Bayar:</label>
+      <input type="text" id="total" readonly>
+
+      <div class="form-footer">
+        <button type="button" onclick="proses()">Proses</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <div class="info">
+      <strong>Catatan:</strong><br>
+      Pembayaran tunai akan mendapat <strong>diskon 10%</strong>.<br>
+      Pembayaran kredit akan dikenakan <strong>bunga 15%</strong>.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

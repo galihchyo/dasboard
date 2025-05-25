@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Pembelian Barang | GaLih Chyo Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Form Pembelian Barang GaLih Chyo Store</h1>
+    <form id="formPembelian">
+      <div class="section">
+        <div class="section-title">Data Pembelian</div>
+        <table>
+          <tr>
+            <td>Nama Barang</td>
+            <td>
+              <select id="barang" onchange="setHarga()">
+                <option value="" disabled selected>Pilih Barang</option>
+                <option value="Procesor">Procesor</option>
+                <option value="Motherboard">Motherboard</option>
+                <option value="RAM">RAM</option>
+                <option value="SSD">SSD</option>
+                <option value="HDD">HDD</option>
+                <option value="VGA">VGA</option>
+                <option value="PSU">PSU</option>
+                <option value="Casing">Casing</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Keyboard">Keyboard</option>
+                <option value="Mouse">Mouse</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Jumlah</td>
+            <td><input type="text" id="jumlah" placeholder="Masukkan jumlah"></td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>
+              <select id="status">
+                <option value="" disabled selected>Pilih</option>
+                <option value="Pelanggan">Pelanggan</option>
+                <option value="Bukan">Bukan Pelanggan</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Hasil Perhitungan</div>
+        <table>
+          <tr>
+            <td>Harga</td>
+            <td><input type="text" id="harga" readonly></td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td><input type="text" id="total" readonly></td>
+          </tr>
+          <tr>
+            <td>Diskon 10%</td>
+            <td><input type="text" id="diskon" readonly></td>
+          </tr>
+          <tr>
+            <td>Bayar</td>
+            <td><input type="text" id="bayar" readonly></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="button-group">
+        <button type="button" onclick="proses()">Proses</button>
+        <button type="button" onclick="resetForm()">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
